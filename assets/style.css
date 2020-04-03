@@ -18,6 +18,20 @@ body {
     text-transform: uppercase;
 }
 
+/*--------------------------------------------------------- Section*/
+
+/*--------------------------------------------------------- Buttons*/
+
+.btn-initial {
+    margin: 0.5rem;
+    background-color: #5900ff;
+    color: #fff;
+}
+
+.btn-initial:hover {
+    color: goldenrod;
+}
+
 /*--------------------------------------------------------- Footer*/
 
 .footer {
@@ -55,4 +69,8 @@ body {
 .anchor-styling-dark {
     padding: 0.5em;
     color: goldenrod;
+}
+
+.anchor-styling-dark:hover {
+    color: #5900ff;
 }

@@ -13,9 +13,9 @@
 
 <body>
 	<header>
-		<div class="row no-gutters">
+		<div class="container-fluid row no-gutters">
 			<div class="col-md">
-				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
 					<button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -36,24 +36,45 @@
                                 class="fa fa-tasks" aria-hidden="true"></i></a>
 							</li>
 						</ul>
-					</div>
-					<div class="custom-control custom-switch">
+					</div>-->
+                    <div class="custom-control custom-switch float-right">
                         <input type="checkbox" class="custom-control-input" id="customSwitch1">
                         <label class="custom-control-label" for="customSwitch1">Dark Mode</label>
                     </div>
-				</nav>
+				<!--</nav>-->
 			</div>
 		</div>
 		<div class="row no-gutters">
 			<div class="col-md heading-centre heading-style-uppercase">
-				<h1 class="h1-text">Title goes here</h1>
-				<h3 class="h4-text">Subtitle goes here</h3>
+				<h1 class="h1-text">Interactive Memory Game</h1>
+				<h3 class="h4-text">follow the colours to glory, and high scores</h3>
 			</div>
 		</div>
 	</header>
 	<section>
-
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col">
+                    <p id="score" class="float-right">Score: </p>
+                    <p>The aim of the game is to press the corresponding button in 
+                    the randomly generated run of colours.<br> The runs will start 
+                    off nice and simple (only four colours), but will get progressively 
+                    harder (up to ten colours).<br> Enjoy! And don't forget to share 
+                    your high scores!</p>
+                </div>
+            </div>
+        </div>
 	</section>
+    <section>
+        <div class="row no-gutters">
+            <div class="col">
+                <div type="button" id="button1" class="btn btn-initial">Red</div>
+                <div type="button" id="button2" class="btn btn-initial">Blue</div>
+                <div type="button" id="button3" class="btn btn-initial">Green</div>
+                <div type="button" id="button4" class="btn btn-initial">Yellow</div>
+            </div>
+        </div>
+    </section>
 	<footer class="footer">
 		<div class="row no-gutters">
 			<div class="col">
@@ -74,6 +95,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js">
 	</script>
 	<script src="assets/main.js"></script>
+    <script src="assets/buttons.js"></script>
 </body>
 
 </html>
