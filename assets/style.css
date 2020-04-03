@@ -1,0 +1,58 @@
+/*--------------------------------------------------------- Body*/
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: #fff;
+    color: #000;
+    padding-bottom: 2rem; /* Footer position */
+}
+
+/*--------------------------------------------------------- Header*/
+
+.heading-centre {
+    text-align: center;
+}
+
+.heading-style-uppercase {
+    text-transform: uppercase;
+}
+
+/*--------------------------------------------------------- Footer*/
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+}
+
+.anchor-styling {
+    padding: 0.5em;
+    color: #000;
+}
+
+/*--------------------------------------------------------- Dark Mode*/
+
+.body-dark {
+    background-color: #000;
+    color: goldenrod;
+}
+
+.footer-dark {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: goldenrod;
+    text-align: center;
+}
+
+.anchor-styling-dark {
+    padding: 0.5em;
+    color: goldenrod;
+}
