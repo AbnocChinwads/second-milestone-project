@@ -22,14 +22,30 @@ body {
 
 /*--------------------------------------------------------- Buttons*/
 
+.btn-centre {
+    text-align: center;
+}
+
 .btn-initial {
     margin: 0.5rem;
     background-color: #5900ff;
     color: #fff;
 }
 
+#button1,
+#button2,
+#button3,
+#button4,
+#button5 {
+    margin: 3rem;
+}
+
 .btn-initial:hover {
     color: goldenrod;
+}
+
+.btn-warning {
+    color: #212529;
 }
 
 /*--------------------------------------------------------- Footer*/
