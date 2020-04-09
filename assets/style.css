@@ -28,7 +28,7 @@ body {
 
 .btn-initial {
     margin: 0.5rem;
-    background-color: #5900ff;
+    background-color: #6f22ff;
     color: #fff;
 }
 
@@ -41,7 +41,7 @@ body {
 }
 
 .btn-initial:hover {
-    color: goldenrod;
+    color: #daa520;
 }
 
 .btn-warning {
@@ -69,7 +69,7 @@ body {
 
 .body-dark {
     background-color: #000;
-    color: goldenrod;
+    color: #daa520;
 }
 
 .footer-dark {
@@ -78,15 +78,15 @@ body {
     bottom: 0;
     width: 100%;
     background-color: #000;
-    color: goldenrod;
+    color: #daa520;
     text-align: center;
 }
 
 .anchor-styling-dark {
     padding: 0.5em;
-    color: goldenrod;
+    color: #daa520;
 }
 
 .anchor-styling-dark:hover {
-    color: #5900ff;
+    color: #6f22ff;
 }

@@ -10,3 +10,6 @@ $("#button3").on("click", function() {
 $("#button4").on("click", function() {
     $("#button4").toggleClass("btn-warning");
 })
+$("#button5").on("click", function() {
+    $("#button5").toggleClass("btn-info");
+})
