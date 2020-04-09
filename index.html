@@ -55,8 +55,8 @@
         <div class="container-fluid">
             <div class="row no-gutters">
                 <div class="col">
-                    <p id="score" class="float-right">
-                    Score:
+                    <p class="float-right">
+                    Score: <span id="score"></span>
                     </p>
                     <p class="text-center">
                     The aim of the game is to press the corresponding button in 
@@ -72,10 +72,10 @@
     <section>
         <div class="row no-gutters btn-centre">
             <div class="col">
-                <button id="button1" class="btn btn-initial">Red</button>
-                <button id="button2" class="btn btn-initial">Blue</button>
-                <button id="button3" class="btn btn-initial">Green</button>
-                <button id="button4" class="btn btn-initial">Yellow</button>
+                <button id="button1" class="btn btn-initial js-button">Red</button>
+                <button id="button2" class="btn btn-initial js-button">Blue</button>
+                <button id="button3" class="btn btn-initial js-button">Green</button>
+                <button id="button4" class="btn btn-initial js-button">Yellow</button>
             </div>
         </div>
         <div class="row no-gutters btn-centre">
@@ -96,14 +96,15 @@
             </div>
 			</div>
 	</footer>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js">
-	</script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js">
+    </script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js">
 	</script>
 	<script src="assets/main.js"></script>
     <script src="assets/buttons.js"></script>
+    <script src="assets/game.js"></script>
 </body>
 
 </html>
