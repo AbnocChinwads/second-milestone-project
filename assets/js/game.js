@@ -37,7 +37,7 @@ function randomIntFromInterval(min, max) { // min and max included
 
 function flashButtons(buttonsToClick, index) {
   setTimeout(function() {
-    $(buttonsToClick[index]).fadeOut(1000).fadeIn(1000);
+    $(buttonsToClick[index]).fadeOut(500).fadeIn(500);
     if (index === buttonsToClick.length - 1) {
       return;
     }
