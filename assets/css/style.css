@@ -28,7 +28,7 @@ body {
 
 .btn-initial {
     margin: 0.5rem;
-    background-color: #6f22ff;
+    background-color: #9b72e8;
     color: #fff;
 }
 
@@ -80,5 +80,5 @@ body {
 }
 
 .anchor-styling-dark:hover {
-    color: #6f22ff;
+    color: #9b72e8;
 }
