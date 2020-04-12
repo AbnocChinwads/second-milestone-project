@@ -2,11 +2,6 @@ var score = 0;
 
 $("#score").html(`${score}`);
 
-function increment() {
-    score += 1;
-    $("#score").html(`${score}`);
-}
-
 $("#button5").on("click", function() {
     var buttons = document.getElementsByClassName("js-button");
     var buttonsToClick = chooseRandomButtons(buttons);
@@ -20,20 +15,16 @@ $("#button5").on("click", function() {
     if (selectedButton === button) {
         currentButtons.splice(button,1);
         alert("Correct");
-        score
+        score += 1;
+        $("#score").html(`${score}`);
     } else {
         currentButtons = buttonsToClick;
         alert("Wrong. Click 'Start' to try again");
+        score = 0;
+        $("#score").html(`${score}`);
     }
   });
 })
-
-/*function reset() {
-    if(currentButtons = buttonsToClick) {
-        buttonsToClick = 0;
-        score = 0;
-    }
-}*/
 
 function chooseRandomButtons(buttons) {
     var buttonsToClick = [];
