@@ -1,5 +1,9 @@
-var count = 0;
-$("#score").html(count);
+var score = 0;
+
+function increment() {
+  score += 1;
+  $("#score")[0].innerHTML = score;
+}
 
 $("#button5").on("click", function() {
   var buttons = document.getElementsByClassName("js-button");
