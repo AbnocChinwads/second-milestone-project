@@ -1,8 +1,10 @@
 var score = 0;
 
-function increment(score) {
+$("#score").html(`${score}`);
+
+function increment() {
     score += 1;
-    $("#score")[0].innerHTML = score;
+    $("#score").html(`${score}`);
 }
 
 $("#button5").on("click", function() {
@@ -25,6 +27,13 @@ $("#button5").on("click", function() {
     }
   });
 })
+
+/*function reset() {
+    if(currentButtons = buttonsToClick) {
+        buttonsToClick = 0;
+        score = 0;
+    }
+}*/
 
 function chooseRandomButtons(buttons) {
     var buttonsToClick = [];
