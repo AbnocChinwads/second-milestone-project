@@ -85,3 +85,17 @@ body {
 .anchor-styling-dark:hover {
     color: #9b72e8;
 }
+
+/**/
+
+@media (max-width: 768px) {
+    h3 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .text-center-sm {
+        text-align: center;
+    }
+}
