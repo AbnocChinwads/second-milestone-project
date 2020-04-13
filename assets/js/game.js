@@ -9,7 +9,7 @@ $("#button5").on("click", function() {
     flashButtons(buttonsToClick, 0);
 
   var currentOrder = 0;
-  $(".js-button").on("click", function() {
+  $(".js-button").off("click").on("click", function() {
     var selectedButton = $(this)[0];
     var button = currentButtons[0];
     if (selectedButton === button) {
