@@ -14,7 +14,6 @@ $("#button5").on("click", function() {
     var button = currentButtons[0];
     if (selectedButton === button) {
         currentButtons.splice(button,1);
-        /*alert("Correct");*/
         score += 1;
         $("#score").html(`${score}`);
     } else {

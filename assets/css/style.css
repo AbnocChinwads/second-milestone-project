@@ -20,6 +20,10 @@ body {
 
 /*--------------------------------------------------------- Section*/
 
+.bigger-text {
+    font-size: 2rem;
+}
+
 /*--------------------------------------------------------- Buttons*/
 
 .btn-centre {
@@ -86,16 +90,10 @@ body {
     color: #9b72e8;
 }
 
-/**/
+/*--------------------------------------------------------- Media Queries*/
 
 @media (max-width: 768px) {
     h3 {
         margin-bottom: 1.5rem;
-    }
-}
-
-@media (min-width: 768px) {
-    .text-center-sm {
-        text-align: center;
     }
 }
