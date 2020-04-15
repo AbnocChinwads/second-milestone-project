@@ -44,28 +44,28 @@ $("#start-button").on("click", function() {
 function chooseRandomButtons(buttons) {
     var buttonsToClick = [];
     var maxRandomNumber = buttons.length - 1;
-    if (score >= 8) {
-        for (var i = 0; i < 5; i++) {
+    if (score >= 78) {
+        for (var i = 0; i < 10; i++) {
             buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
         }    
-    } else if (score >= 18) {
-        for (var i = 0; i < 6; i++) {
-            buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
-        }
-    } else if (score >= 30) {
-        for (var i = 0; i < 7; i++) {
+    } else if (score >= 60) {
+        for (var i = 0; i < 9; i++) {
             buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
         }
     } else if (score >= 44) {
         for (var i = 0; i < 8; i++) {
             buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
         }
-    } else if (score >= 60) {
-        for (var i = 0; i < 9; i++) {
+    } else if (score >= 30) {
+        for (var i = 0; i < 7; i++) {
             buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
         }
-    } else if (score >= 78) {
-        for (var i = 0; i < 10; i++) {
+    } else if (score >= 18) {
+        for (var i = 0; i < 6; i++) {
+            buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
+        }
+    } else if (score >= 8) {
+        for (var i = 0; i < 5; i++) {
             buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
         }
     } else {
