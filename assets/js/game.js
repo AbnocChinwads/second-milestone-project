@@ -20,13 +20,37 @@ $("#start-button").on("click", function() {
         currentButtons.splice(button,1);
         score += 1;
         $("#score").html(`${score}`);
-        if (score == 4) {
+        if (score == 111) {
             alert("Well done! Click start to begin the next level");
-        } else if (score == 8) {
+        } else if (score == 100) {
+            alert("Well done! Click start to begin the next level");
+        } else if (score == 98) {
+            alert("Well done! Click start to begin the next level");
+        } else if (score == 88) {
+            alert("Well done! Click start to begin the next level");
+        } else if (score == 78) {
+            alert("Well done! Click start to begin the next level");
+        } else if (score == 69) {
+            alert("Well done! Click start to begin the next level");
+        } else if (score == 60) {
+            alert("Well done! Click start to begin the next level");
+        } else if (score == 52) {
+            alert("Well done! Click start to begin the next level");
+        } else if (score == 44) {
+            alert("Well done! Click start to begin the next level");
+        } else if (score == 37) {
+            alert("Well done! Click start to begin the next level");
+        } else if (score == 30) {
+            alert("Well done! Click start to begin the next level");
+        } else if (score == 24) {
+            alert("Well done! Click start to begin the next level");
+        } else if (score == 18) {
             alert("Well done! Click start to begin the next level");
         } else if (score == 13) {
             alert("Well done! Click start to begin the next level");
-        } else if (score == 18) {
+        } else if (score == 8) {
+            alert("Well done! Click start to begin the next level");
+        } else if (score == 4) {
             alert("Well done! Click start to begin the next level");
         }
     } else {
@@ -44,7 +68,11 @@ $("#start-button").on("click", function() {
 function chooseRandomButtons(buttons) {
     var buttonsToClick = [];
     var maxRandomNumber = buttons.length - 1;
-    if (score >= 78) {
+    if (score >= 98) {
+        for (var i = 0; i < 11; i++) {
+            buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
+        }
+    } else if (score >= 78) {
         for (var i = 0; i < 10; i++) {
             buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
         }    
