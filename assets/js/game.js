@@ -2,7 +2,7 @@ var score = 0;
 
 $("#score").html(`${score}`);
 
-$("#button5").on("click", function() {
+$("#start-button").on("click", function() {
     var buttons = document.getElementsByClassName("js-button");
     var buttonsToClick = chooseRandomButtons(buttons);
     currentButtons = buttonsToClick;
@@ -12,7 +12,7 @@ $("#button5").on("click", function() {
   $(".js-button").off("click").on("click", function() {
     var selectedButton = $(this)[0];
     var button = currentButtons[0];
-    if (selectedButton === currentButtons.length - 1) {
+    if (selectedButton === button.length - 1) {
         alert("Well done! Press start again to begin the new round!");
         score += 1;
         $("#score").html(`${score}`);
