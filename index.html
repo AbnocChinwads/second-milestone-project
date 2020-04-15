@@ -51,24 +51,36 @@
         </div>
 	</section>
     <section>
-        <div class="row no-gutters btn-centre">
-            <div class="col">
-                <button id="button1" class="btn btn-danger js-button">Red</button>
-                <button id="button2" class="btn btn-primary js-button">Blue</button>
-                <button id="button3" class="btn btn-success js-button">Green</button>
-                <button id="button4" class="btn btn-warning js-button">Yellow</button>
+        <div class="container-fluid">
+            <div class="row no-gutters btn-centre">
+                <div class="col">
+                    <button id="button1" class="btn btn-danger js-button">Red</button>
+                    <button id="button2" class="btn btn-primary js-button">Blue</button>
+                </div>
             </div>
-        </div>
-        <div class="row no-gutters btn-centre">
-            <div class="col">
-                <button id="button5" class="btn btn-initial">Start</button>
+            <div class="row no-gutters btn-centre">
+                <div class="col">
+                    <button id="button3" class="btn btn-success js-button">Green</button>
+                    <button id="button4" class="btn btn-warning js-button">Yellow</button>
+                </div>
             </div>
-        </div>
+            <div class="row no-gutters btn-centre">
+                <div class="col">
+                    <button id="button5" class="btn btn-initial">Start</button>
+                </div>
+            </div>
+        </div>    
     </section>
     <section>
-        <p class="text-center bigger-text">
-            Score: <span id="score"></span>
-        </p>
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col">
+                    <p class="text-center bigger-text">
+                        Score: <span id="score"></span>
+                    </p>
+                </div>
+            </div>    
+        </div>
     </section>
     
     <script src="https://code.jquery.com/jquery-3.4.1.min.js">

@@ -12,13 +12,17 @@ $("#button5").on("click", function() {
   $(".js-button").off("click").on("click", function() {
     var selectedButton = $(this)[0];
     var button = currentButtons[0];
-    if (selectedButton === button) {
+    if (selectedButton === currentButtons.length - 1) {
+        alert("Well done! Press start again to begin the new round!");
+        score += 1;
+        $("#score").html(`${score}`);
+    } else if (selectedButton === button) {
         currentButtons.splice(button,1);
         score += 1;
         $("#score").html(`${score}`);
     } else {
         currentButtons = buttonsToClick;
-        alert("Wrong. Click 'Start' to try again");
+        alert("Sorry, that was wrong. Click 'Start' to try again");
         score = 0;
         $("#score").html(`${score}`);
     }
