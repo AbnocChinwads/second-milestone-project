@@ -105,5 +105,5 @@ function flashButtons(buttonsToClick, index) {
             return;
         }
         flashButtons(buttonsToClick, index = index + 1);
-    }, 1000 //Time between pressing 'start' and the first button flash);
+    }, 1000 ); //Time between pressing 'start' and the first button flash
 }
