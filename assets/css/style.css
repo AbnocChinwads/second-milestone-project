@@ -26,7 +26,7 @@ body {
 /*--------------------------------------------------------- Section*/
 
 .bigger-text {
-    font-size: 2rem;
+    font-size: 2rem; /*Increases size for score and level text*/
 }
 
 /*--------------------------------------------------------- Buttons*/
@@ -46,7 +46,7 @@ body {
 
 #start-button {
     margin: 3rem;
-    padding: 20px 10px;
+    padding: 20px 10px; /*Rounds button edges to force a circle*/
     border-radius: 50%;
 }
 
@@ -56,7 +56,7 @@ body {
 #button4,
 #button5 {
     margin: 3rem;
-    padding: 35px 25px;
+    padding: 35px 25px; /*Rounds button edges to force a circle*/
     border-radius: 50%;
 }
 
@@ -74,12 +74,12 @@ body {
 }
 
 .anchor-styling-dark:hover {
-    color: #9b72e8;
+    color: #9b72e8; /*Colour change of social media links on mouse hover*/
 }
 
 .btn-white {
     background-color: #fff;
-}
+} /*Changes colour of 5th button from black to white in dark mode*/
 
 /*--------------------------------------------------------- Media Queries*/
 
@@ -87,4 +87,4 @@ body {
     h3 {
         margin-bottom: 1.5rem;
     }
-}
+} /*Improves heading display on mobile and tablet devices*/

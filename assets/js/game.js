@@ -1,14 +1,16 @@
 var score = 0;
 var level = 0;
 
-$("#score").html(`${score}`);
-$("#level").html(`${level}`);
+$("#score").html(`${score}`); //Display score on webpage
+$("#level").html(`${level}`); //Display level on webpage
 
+//Game logic
 $("#start-button").on("click", function() {
     var buttons = document.getElementsByClassName("js-button");
     var buttonsToClick = chooseRandomButtons(buttons);
     currentButtons = buttonsToClick;
     flashButtons(buttonsToClick, 0);
+    //Every time the start button is pressed, increment level count by 1
     level += 1;
     $("#level").html(`${level}`);
 
@@ -16,10 +18,13 @@ $("#start-button").on("click", function() {
   $(".js-button").off("click").on("click", function() {
     var selectedButton = $(this)[0];
     var button = currentButtons[0];
+    //Check input matches array
     if (selectedButton === button) {
         currentButtons.splice(button,1);
+        //When a correct input is recorded, increment score by 1
         score += 1;
         $("#score").html(`${score}`);
+        //Display win message if you reach the end of the array
         if (score == 111) {
             alert("Well done! Click start to begin the next level");
         } else if (score == 100) {
@@ -53,6 +58,7 @@ $("#start-button").on("click", function() {
         } else if (score == 4) {
             alert("Well done! Click start to begin the next level");
         }
+    //Display restart message if input does not match array
     } else {
         currentButtons = buttonsToClick;
         alert("Sorry, that was wrong. Click 'Start' to try again");
@@ -65,9 +71,12 @@ $("#start-button").on("click", function() {
 
 })
 
+//Random array functions
 function chooseRandomButtons(buttons) {
     var buttonsToClick = [];
     var maxRandomNumber = buttons.length - 1;
+    //Increase difficulty when a certain score is reached
+    //every two iterations at new difficulty level
     if (score >= 98) {
         for (var i = 0; i < 11; i++) {
             buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
@@ -109,6 +118,8 @@ function randomIntFromInterval(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+//Controls how fast the buttons flash
+//and how soon after the 'start' button is pushed the first one flashes
 function flashButtons(buttonsToClick, index) {
     setTimeout(function() {
         $(buttonsToClick[index]).fadeOut(500).fadeIn(500);

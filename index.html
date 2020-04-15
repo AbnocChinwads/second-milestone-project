@@ -12,44 +12,56 @@
 </head>
 
 <body>
+<!--Header-->
 	<header>
 		<div class="container-fluid row no-gutters">
 			<div class="col">
+            <!--Social media links-->
 				<a class="anchor-styling" href="https://www.facebook.com/" target="_blank">
 					<i class="fab fa-facebook-square" aria-hidden="true"></i></a>
 				<a class="anchor-styling" href="https://www.twitter.com/" target="_blank">
 					<i class="fab fa-twitter-square" aria-hidden="true"></i></a>
 				<a class="anchor-styling" href="https://www.instagram.com/" target="_blank">
 					<i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <!--/Social media links-->
+            <!--Dark mode switch-->
                 <div class="custom-control custom-switch float-right">
+                <!--Uses bootstrap classes to create a custom checkbox-->
                     <input type="checkbox" class="custom-control-input" id="customSwitch1">
                     <label class="custom-control-label" for="customSwitch1">Dark Mode</label>
                 </div>
+            <!--/Dark mode switch-->
 			</div>
 		</div>
+        <!--Game title-->
 		<div class="row no-gutters">
 			<div class="col-md heading-centre heading-style-uppercase">
 				<h1 class="h1-text">Interactive Memory Game</h1>
 				<h3 class="h3-text">follow the colours to glory, and high scores!</h3>
 			</div>
 		</div>
+        <!--/Game title-->
 	</header>
+<!--/Header-->
+<!--How to play-->
 	<section>
         <div class="container-fluid">
             <div class="row no-gutters">
                 <div class="col">
                     <p class="text-center">
-                    The aim of the game is to press the corresponding button in 
-                    the randomly generated run of colours.<br> The runs will start 
-                    off nice and simple (only four colours), but will get progressively 
-                    harder (up to eleven colours).<br> You have two rounds of each length, 
-                    when you hit eleven you'll have to see how long you can hold out.
-                    <br> Enjoy! And don't forget to share your high scores!
+                        The aim of the game is to press the corresponding button in 
+                        the randomly generated run of colours.<br> The runs will start 
+                        off nice and simple (only four colours), but will get progressively 
+                        harder (up to eleven colours).<br> You have two rounds of each length, 
+                        when you hit eleven you'll have to see how long you can hold out.
+                        <br> Enjoy! And don't forget to share your high scores!
                     </p>
                 </div>
             </div>
         </div>
 	</section>
+<!--/How to play-->
+<!--Game buttons-->
     <section>
         <div class="container-fluid">
             <div class="row no-gutters btn-centre">
@@ -72,6 +84,8 @@
             </div>
         </div>    
     </section>
+<!--/Game buttons-->
+<!--Score & level-->
     <section>
         <div class="container-fluid">
             <div class="row no-gutters">
@@ -86,7 +100,7 @@
             </div>    
         </div>
     </section>
-    
+<!--/Score & level-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js">
     </script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
