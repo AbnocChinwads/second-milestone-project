@@ -25,39 +25,12 @@ $("#start-button").on("click", function() {
         score += 1;
         $("#score").html(`${score}`);
         //Display win message if you reach the end of the array
-        if (score == 111) {
+        if (score == 111 || score == 100 || score == 98 || score == 88 || score == 78
+            || score == 69 || score == 60 || score == 52 || score == 44 || score == 37
+            || score == 30 || score == 24 || score == 18 || score == 13 || score == 8
+            || score == 4) {
             alert("Well done! Click start to begin the next level");
-        } else if (score == 100) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 98) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 88) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 78) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 69) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 60) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 52) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 44) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 37) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 30) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 24) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 18) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 13) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 8) {
-            alert("Well done! Click start to begin the next level");
-        } else if (score == 4) {
-            alert("Well done! Click start to begin the next level");
-        }
+            }
     //Display restart message if input does not match array
     } else {
         currentButtons = buttonsToClick;
