@@ -1,8 +1,10 @@
 var score = 0;
 var level = 0;
+var highScore = 0;
 
 $("#score").html(`${score}`); //Display score on webpage
 $("#level").html(`${level}`); //Display level on webpage
+$("#high-score").html(`${highScore}`); //Display high score on webpage
 
 //Game logic
 $("#start-button").on("click", function() {
@@ -23,7 +25,9 @@ $("#start-button").on("click", function() {
         currentButtons.splice(button,1);
         //When a correct input is recorded, increment score by 1
         score += 1;
+        highScore +=1;
         $("#score").html(`${score}`);
+        $("#high-score").html(`${highScore}`);
         //Display win message if you reach the end of the array
         if (score == 111 || score == 100 || score == 98 || score == 88 || score == 78
             || score == 69 || score == 60 || score == 52 || score == 44 || score == 37
@@ -43,6 +47,14 @@ $("#start-button").on("click", function() {
   });
 
 })
+
+var saveScore = localStorage.setItem("saveScore", "1");
+
+/*if(saveScore) {
+    //Save high score in localStorage
+    highScore;
+    $("#high-score").html(`${highScore}`);
+}*/
 
 //Random array functions
 function chooseRandomButtons(buttons) {
