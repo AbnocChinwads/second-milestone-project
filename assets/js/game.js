@@ -95,10 +95,15 @@ function randomIntFromInterval(min, max) { // min and max included
 //and how soon after the 'start' button is pushed the first one flashes
 function flashButtons(buttonsToClick, index) {
     setTimeout(function() {
-        $(buttonsToClick[index]).fadeOut(500).fadeIn(500);
+        if (score >= 111) {
+            //Buttons flash twice as fast after level 22
+            $(buttonsToClick[index]).fadeOut(250).fadeIn(250);
+        } else {
+            $(buttonsToClick[index]).fadeOut(500).fadeIn(500);
+        }
         if (index === buttonsToClick.length - 1) {
             return;
         }
         flashButtons(buttonsToClick, index = index + 1);
-    }, 1000);
+    }, 1000 //Time between pressing 'start' and the first button flash);
 }
