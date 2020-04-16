@@ -1,18 +1,10 @@
 var score = 0;
 var level = 0;
-var highScore = 0;
-/*var saveScore = localStorage.getItem("saveScore");*/
+var highScore = localStorage.getItem("highScore") || score;
 
 $("#score").html(`${score}`); //Display score on webpage
 $("#level").html(`${level}`); //Display level on webpage
 $("#high-score").html(`${highScore}`); //Display high score on webpage
-
-/*if(saveScore) {
-    //Save high score in localStorage
-    var saveScore = localStorage.setItem("saveScore", "1");
-    getItem(highScore);
-    $("#high-score").html(`${highScore}`);
-}*/
 
 //Game logic
 $("#start-button").on("click", function() {
@@ -53,6 +45,8 @@ $("#start-button").on("click", function() {
         level = 0;
         $("#score").html(`${score}`);
         $("#level").html(`${level}`);
+
+        localStorage.setItem("highScore", highScore);
     }
   });
 
