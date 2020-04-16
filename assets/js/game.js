@@ -1,5 +1,6 @@
 var score = 0;
 var level = 0;
+//Call high score from localStorage or display the same int as score
 var highScore = localStorage.getItem("highScore") || score;
 
 $("#score").html(`${score}`); //Display score on webpage
@@ -46,7 +47,7 @@ $("#start-button").on("click", function() {
         $("#score").html(`${score}`);
         $("#level").html(`${level}`);
 
-        localStorage.setItem("highScore", highScore);
+        localStorage.setItem("highScore", highScore); //Set persistent high score through page loads
     }
   });
 
