@@ -2,6 +2,7 @@ var score = 0;
 var level = 0;
 //Call high score from localStorage or display 0
 var highScore = +localStorage.getItem("highScore") || 0;
+var difficulty = 4;
 
 $("#score").html(`${score}`); //Display score on webpage
 $("#level").html(`${level}`); //Display level on webpage
@@ -42,10 +43,7 @@ $("#start-button").on("click", function() {
         $("#high-score").html(`${highScore}`);
         
         //Display win message if you reach the end of the array
-        if (score == 111 || score == 100 || score == 98 || score == 88 || score == 78
-            || score == 69 || score == 60 || score == 52 || score == 44 || score == 37
-            || score == 30 || score == 24 || score == 18 || score == 13 || score == 8
-            || score == 4) {
+        if (currentButtons.length === 0) {
             alert("Well done! Click start to begin the next level");
             //Increase level count at the end of every level
             level += 1;
@@ -58,6 +56,7 @@ $("#start-button").on("click", function() {
         //Reset score and level count to 0 on a failed match
         score = 0;
         level = 0;
+        difficulty = 4;
         $("#score").html(`${score}`);
         $("#level").html(`${level}`);
     }
@@ -71,39 +70,14 @@ function chooseRandomButtons(buttons) {
     var maxRandomNumber = buttons.length - 1;
     //Increase difficulty when a certain score is reached
     //every two iterations at new difficulty level
-    if (score >= 98) {
-        for (var i = 0; i < 11; i++) {
-            buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
-        }
-    } else if (score >= 78) {
-        for (var i = 0; i < 10; i++) {
-            buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
-        }    
-    } else if (score >= 60) {
-        for (var i = 0; i < 9; i++) {
-            buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
-        }
-    } else if (score >= 44) {
-        for (var i = 0; i < 8; i++) {
-            buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
-        }
-    } else if (score >= 30) {
-        for (var i = 0; i < 7; i++) {
-            buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
-        }
-    } else if (score >= 18) {
-        for (var i = 0; i < 6; i++) {
-            buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
-        }
-    } else if (score >= 8) {
-        for (var i = 0; i < 5; i++) {
-            buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
-        }
-    } else {
-        for (var i = 0; i < 4; i++) {
-            buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
-        }
+    if (level % 2 == 1 && level > 1) {
+        difficulty += 1;
+
     }
+    for (var i = 0; i < difficulty; i++) {
+    buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
+    
+}
 
     return buttonsToClick;
 }
@@ -116,12 +90,8 @@ function randomIntFromInterval(min, max) { // min and max included
 //and how soon after the 'start' button is pushed the first one flashes
 function flashButtons(buttonsToClick, index) {
     setTimeout(function() {
-        if (score >= 111) {
-            //Buttons flash twice as fast after level 22
-            $(buttonsToClick[index]).fadeOut(250).fadeIn(250);
-        } else {
-            $(buttonsToClick[index]).fadeOut(500).fadeIn(500);
-        }
+        $(buttonsToClick[index]).fadeOut(500).fadeIn(500);
+
         if (index === buttonsToClick.length - 1) {
             return;
         }
