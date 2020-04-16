@@ -1,7 +1,7 @@
 var score = 0;
 var level = 0;
-//Call high score from localStorage or display the same int as score
-var highScore = /*localStorage.getItem("highScore") ||*/ score;
+//Call high score from localStorage or display 0
+var highScore = +localStorage.getItem("highScore") || 0;
 
 $("#score").html(`${score}`); //Display score on webpage
 $("#level").html(`${level}`); //Display level on webpage
@@ -13,7 +13,8 @@ $("#start-button").on("click", function() {
     var buttonsToClick = chooseRandomButtons(buttons);
     currentButtons = buttonsToClick;
     flashButtons(buttonsToClick, 0);
-    //Every time the start button is pressed, increment level count by 1
+    //if level count is 0 when the start button is pressed
+    //increment level count by 1
     if (level == 0) {
         level += 1;
         $("#level").html(`${level}`);
@@ -28,7 +29,14 @@ $("#start-button").on("click", function() {
         currentButtons.splice(button,1);
         //When a correct input is recorded, increment score & high score by 1
         score += 1;
-        highScore += 1;
+        //if the score is greater than the high score
+        //increase high score by 1 and save it to localStorage
+        if (score > highScore) {
+            highScore += 1;
+            //Set persistent high score through page loads
+            localStorage.setItem("highScore", highScore);
+        }
+
 
         $("#score").html(`${score}`);
         $("#high-score").html(`${highScore}`);
@@ -39,7 +47,7 @@ $("#start-button").on("click", function() {
             || score == 30 || score == 24 || score == 18 || score == 13 || score == 8
             || score == 4) {
             alert("Well done! Click start to begin the next level");
-
+            //Increase level count at the end of every level
             level += 1;
             $("#level").html(`${level}`);
             }
@@ -47,12 +55,11 @@ $("#start-button").on("click", function() {
     } else {
         currentButtons = buttonsToClick;
         alert("Sorry, that was wrong. Click 'Start' to try again");
+        //Reset score and level count to 0 on a failed match
         score = 0;
         level = 0;
         $("#score").html(`${score}`);
         $("#level").html(`${level}`);
-        //Set persistent high score through page loads
-        /*localStorage.setItem("highScore", highScore);*/
     }
   });
 
