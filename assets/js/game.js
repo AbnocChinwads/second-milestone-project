@@ -44,7 +44,7 @@ $("#start-button").on("click", function() {
         
         //Display win message if you reach the end of the array
         if (currentButtons.length === 0) {
-            alert("Well done! Click start to begin the next level");
+            alert("Well done! You won the level! Click 'Start' to begin the next");
             //Increase level count at the end of every level
             level += 1;
             $("#level").html(`${level}`);

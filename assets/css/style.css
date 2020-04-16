@@ -86,8 +86,6 @@ body {
 @media (max-width: 386px) {
     #btn-start {
         margin: 1rem;
-        padding: 1.3rem 0.6rem; /*Rounds button edges to force a circle*/
-        border-radius: 50%;
     }
 
     #btn-red,
@@ -96,17 +94,13 @@ body {
     #btn-yellow,
     #btn-mono {
         margin: 1rem;
-        padding: 2rem 1.6rem; /*Rounds button edges to force a circle*/
-        border-radius: 50%;
     }
 
 }
 
-@media (min-width: 387px) {
+@media (min-width: 387px) and (max-width: 486px) {
     #btn-start {
         margin: 2rem;
-        padding: 1.3rem 0.6rem; /*Rounds button edges to force a circle*/
-        border-radius: 50%;
     }
 
     #btn-red,
@@ -115,8 +109,6 @@ body {
     #btn-yellow,
     #btn-mono {
         margin: 2rem;
-        padding: 2rem 1.6rem; /*Rounds button edges to force a circle*/
-        border-radius: 50%;
     }
 
 }
