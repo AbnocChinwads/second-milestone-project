@@ -9,7 +9,7 @@ $("#level").html(`${level}`); //Display level on webpage
 $("#high-score").html(`${highScore}`); //Display high score on webpage
 
 //Game logic
-$("#start-button").on("click", function() {
+$("#btn-start").on("click", function() {
     var buttons = document.getElementsByClassName("js-button");
     var buttonsToClick = chooseRandomButtons(buttons);
     currentButtons = buttonsToClick;
@@ -61,7 +61,6 @@ $("#start-button").on("click", function() {
         $("#level").html(`${level}`);
     }
   });
-
 })
 
 //Random array functions
