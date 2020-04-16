@@ -1,12 +1,11 @@
 //Dark mode logic
 //Using localStorage variables
-
 var darkMode = localStorage.getItem("darkmode");
 
 if(darkMode) {
     //Adds dark mode specific css
     //to create a darker viewport
-    $('#customSwitch1').prop("checked", true);
+    $('#darkModeSwitch').prop("checked", true);
     $("body").toggleClass("body-dark");
     $("label").text(function(i, text){
         return text === "Dark Mode" ? "Light Mode" : "Dark Mode";
@@ -16,7 +15,7 @@ if(darkMode) {
 }
 
 //localStorage function set and remove for dark mode
-$("#customSwitch1").change(function() {
+$("#darkModeSwitch").change(function() {
     darkMode = !darkMode;
     if (darkMode) {
         localStorage.setItem("darkmode", "1");
