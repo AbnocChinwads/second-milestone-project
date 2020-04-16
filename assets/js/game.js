@@ -1,7 +1,7 @@
 var score = 0;
 var level = 0;
 //Call high score from localStorage or display the same int as score
-var highScore = localStorage.getItem("highScore") || score;
+var highScore = /*localStorage.getItem("highScore") ||*/ score;
 
 $("#score").html(`${score}`); //Display score on webpage
 $("#level").html(`${level}`); //Display level on webpage
@@ -14,8 +14,10 @@ $("#start-button").on("click", function() {
     currentButtons = buttonsToClick;
     flashButtons(buttonsToClick, 0);
     //Every time the start button is pressed, increment level count by 1
-    level += 1;
-    $("#level").html(`${level}`);
+    if (level == 0) {
+        level += 1;
+        $("#level").html(`${level}`);
+    }
 
   var currentOrder = 0;
   $(".js-button").off("click").on("click", function() {
@@ -37,6 +39,9 @@ $("#start-button").on("click", function() {
             || score == 30 || score == 24 || score == 18 || score == 13 || score == 8
             || score == 4) {
             alert("Well done! Click start to begin the next level");
+
+            level += 1;
+            $("#level").html(`${level}`);
             }
     //Display restart message if input does not match array
     } else {
@@ -46,8 +51,8 @@ $("#start-button").on("click", function() {
         level = 0;
         $("#score").html(`${score}`);
         $("#level").html(`${level}`);
-
-        localStorage.setItem("highScore", highScore); //Set persistent high score through page loads
+        //Set persistent high score through page loads
+        /*localStorage.setItem("highScore", highScore);*/
     }
   });
 
