@@ -120,3 +120,15 @@ body {
     }
 
 }
+
+@media (min-width: 2560px) {
+    * {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 3840px) {
+    * {
+        font-size: 2rem;
+    }
+}
