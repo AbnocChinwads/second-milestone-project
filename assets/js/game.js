@@ -2,7 +2,7 @@ var score = 0;
 var level = 0;
 //Call high score from localStorage or display 0
 var highScore = +localStorage.getItem("highScore") || 0;
-var difficulty = 4;
+var difficulty = 4; //Hidden variable to control game difficulty
 
 $("#score").html(`${score}`); //Display score on webpage
 $("#level").html(`${level}`); //Display level on webpage
@@ -14,8 +14,7 @@ $("#btn-start").on("click", function() {
     var buttonsToClick = chooseRandomButtons(buttons);
     currentButtons = buttonsToClick;
     flashButtons(buttonsToClick, 0);
-    //if level count is 0 when the start button is pressed
-    //increment level count by 1
+    //Increment level count by 1 when the start button is pressed
     if (level == 0) {
         level += 1;
         $("#level").html(`${level}`);
@@ -28,10 +27,10 @@ $("#btn-start").on("click", function() {
     //Check input matches array
     if (selectedButton === button) {
         currentButtons.splice(button,1);
-        //When a correct input is recorded, increment score & high score by 1
+        //When a correct input is recorded, increment score by 1
         score += 1;
+        //Increase high score by 1 and save it to localStorage
         //if the score is greater than the high score
-        //increase high score by 1 and save it to localStorage
         if (score > highScore) {
             highScore += 1;
             //Set persistent high score through page loads
@@ -54,6 +53,7 @@ $("#btn-start").on("click", function() {
         currentButtons = buttonsToClick;
         alert("Sorry, that was wrong. Click 'Start' to try again");
         //Reset score and level count to 0 on a failed match
+        //Reset difficulty variable to 4
         score = 0;
         level = 0;
         difficulty = 4;
@@ -67,16 +67,16 @@ $("#btn-start").on("click", function() {
 function chooseRandomButtons(buttons) {
     var buttonsToClick = [];
     var maxRandomNumber = buttons.length - 1;
-    //Increase difficulty when a certain score is reached
+    //Increase difficulty when a certain level is reached
     //every two iterations at new difficulty level
-    if (level % 2 == 1 && level > 1) {
+    if (level % 2 == 1 && level > 1 && level < 14) {
         difficulty += 1;
-
     }
+    //When difficulty variable increses
+    //length of array increases
     for (var i = 0; i < difficulty; i++) {
-    buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
-    
-}
+        buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
+    }
 
     return buttonsToClick;
 }
@@ -89,8 +89,13 @@ function randomIntFromInterval(min, max) { // min and max included
 //and how soon after the 'start' button is pushed the first one flashes
 function flashButtons(buttonsToClick, index) {
     setTimeout(function() {
-        $(buttonsToClick[index]).fadeOut(500).fadeIn(500);
-
+        //When difficulty reaches a certain number
+        if (difficulty == 10) {
+            //the buttons flash faster
+            $(buttonsToClick[index]).fadeOut(250).fadeIn(250);
+        } else {
+            $(buttonsToClick[index]).fadeOut(500).fadeIn(500);
+        }
         if (index === buttonsToClick.length - 1) {
             return;
         }

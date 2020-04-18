@@ -47,8 +47,8 @@ body {
 
 #btn-start {
     margin: 3rem;
-    padding: 1.3rem 0.6rem; /*Rounds button edges to force a circle*/
-    border-radius: 50%;
+    padding: 1.3rem 0.6rem;
+    border-radius: 50%; /*Rounds button edges to force a circle*/
 }
 
 #btn-red,
@@ -57,8 +57,8 @@ body {
 #btn-yellow,
 #btn-mono {
     margin: 3rem;
-    padding: 2rem 1.6rem; /*Rounds button edges to force a circle*/
-    border-radius: 50%;
+    padding: 2rem 1.6rem;
+    border-radius: 50%; /*Rounds button edges to force a circle*/
 }
 
 /*--------------------------------------------------------- Dark Mode*/
@@ -123,12 +123,12 @@ body {
 
 @media (min-width: 2560px) {
     * {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /*Improves readability on larger resolutions*/
     }
 }
 
 @media (min-width: 3840px) {
     * {
-        font-size: 2rem;
+        font-size: 2rem; /*Improves readability on 4K resolutions*/
     }
 }
