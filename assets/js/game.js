@@ -10,6 +10,9 @@ $("#high-score").html(`${highScore}`); //Display high score on webpage
 
 //Game logic
 $("#btn-start").on("click", function() {
+    //Disables button to prevent multiple level starts
+    $("#btn-start").prop("disabled", true);
+    $("#btn-start").text("Disabled");
     var buttons = document.getElementsByClassName("js-button");
     var buttonsToClick = chooseRandomButtons(buttons);
     currentButtons = buttonsToClick;
@@ -20,8 +23,8 @@ $("#btn-start").on("click", function() {
         $("#level").html(`${level}`);
     }
 
-  var currentOrder = 0;
-  $(".js-button").off("click").on("click", function() {
+    var currentOrder = 0;
+    $(".js-button").off("click").on("click", function() {
     var selectedButton = $(this)[0];
     var button = currentButtons[0];
     //Check input matches array
@@ -37,12 +40,14 @@ $("#btn-start").on("click", function() {
             localStorage.setItem("highScore", highScore);
         }
 
-
         $("#score").html(`${score}`);
         $("#high-score").html(`${highScore}`);
         
         //Display win message if you reach the end of the array
         if (currentButtons.length === 0) {
+            //Re-enables button on round win
+            $("#btn-start").prop("disabled", false);
+            $("#btn-start").text("Start");
             alert("Well done! You won the level! Click 'Start' to begin the next");
             //Increase level count at the end of every level
             level += 1;
@@ -51,6 +56,9 @@ $("#btn-start").on("click", function() {
     //Display restart message if input does not match array
     } else {
         currentButtons = buttonsToClick;
+        //Re-enables button on round win
+        $("#btn-start").prop("disabled", false);
+        $("#btn-start").text("Start");
         alert("Sorry, that was wrong. Click 'Start' to try again");
         //Reset score and level count to 0 on a failed match
         //Reset difficulty variable to 4
@@ -90,7 +98,7 @@ function randomIntFromInterval(min, max) { // min and max included
 function flashButtons(buttonsToClick, index) {
     setTimeout(function() {
         //When difficulty reaches a certain number
-        if (difficulty == 10) {
+        if (difficulty == 10 && level <= 15) {
             //the buttons flash faster
             $(buttonsToClick[index]).fadeOut(250).fadeIn(250);
         } else {
