@@ -6,6 +6,7 @@ body {
     background-color: #fff;
     font-family: Helvetica, sans-serif;
     color: #000;
+    padding-bottom: 1rem;
 }
 
 /*--------------------------------------------------------- Header*/
@@ -59,6 +60,18 @@ body {
     margin: 3rem;
     padding: 2rem 1.6rem;
     border-radius: 50%; /*Rounds button edges to force a circle*/
+}
+
+/*--------------------------------------------------------- Footer*/
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+a:link {
+    text-decoration: none;
 }
 
 /*--------------------------------------------------------- Dark Mode*/

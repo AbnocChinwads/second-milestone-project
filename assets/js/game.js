@@ -80,10 +80,16 @@ function chooseRandomButtons(buttons) {
     if (level % 2 == 1 && level > 1 && level < 14) {
         difficulty += 1;
     }
+    else if (level % 2 == 1 && level > 16) {
+        difficulty += 1;
+    }
     //When difficulty variable increses
     //length of array increases
     for (var i = 0; i < difficulty; i++) {
         buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
+
+        /*(difficulty.length - 1 === i) ? $("button").prop("disabled", false)
+         : $("button").prop("disabled", true);*/
     }
 
     return buttonsToClick;
