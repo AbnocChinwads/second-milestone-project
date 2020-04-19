@@ -1,5 +1,7 @@
 var score = 0;
 var level = 0;
+//Call best level from localStorage or display 0
+var levelBest = +localStorage.getItem("levelBest") || 0;
 //Call high score from localStorage or display 0
 var highScore = +localStorage.getItem("highScore") || 0;
 var difficulty = 4; //Hidden variable to control game difficulty
@@ -7,6 +9,7 @@ var difficulty = 4; //Hidden variable to control game difficulty
 $("#score").html(`${score}`); //Display score on webpage
 $("#level").html(`${level}`); //Display level on webpage
 $("#high-score").html(`${highScore}`); //Display high score on webpage
+$("#best-level").html(`${levelBest}`); //Display best level on webpage
 
 //Game logic
 $("#btn-start").on("click", function() {
@@ -21,6 +24,14 @@ $("#btn-start").on("click", function() {
     if (level == 0) {
         level += 1;
         $("#level").html(`${level}`);
+    }
+    //Increase best level by 1 and save it to localStorage
+    //if the level is greater than the best level
+    if (level > levelBest) {
+        levelBest += 1;
+        //Set persistent best level through page loads
+        localStorage.setItem("levelBest", levelBest);
+        $("#best-level").html(`${levelBest}`);
     }
 
     var currentOrder = 0;
@@ -42,6 +53,7 @@ $("#btn-start").on("click", function() {
 
         $("#score").html(`${score}`);
         $("#high-score").html(`${highScore}`);
+        $("#best-level").html(`${levelBest}`);
         
         //Display win message if you reach the end of the array
         if (currentButtons.length === 0) {
@@ -51,7 +63,14 @@ $("#btn-start").on("click", function() {
             alert("Well done! You won the level! Click 'Start' to begin the next");
             //Increase level count at the end of every level
             level += 1;
+            
+            if (level > levelBest) {
+                levelBest += 1;
+                localStorage.setItem("levelBest", levelBest);
+            }
+            
             $("#level").html(`${level}`);
+            $("#best-level").html(`${levelBest}`);
             }
     //Display restart message if input does not match array
     } else {
@@ -83,7 +102,7 @@ function chooseRandomButtons(buttons) {
     else if (level % 2 == 1 && level > 16) {
         difficulty += 1;
     }
-    //When difficulty variable increses
+    //When difficulty variable increases
     //length of array increases
     for (var i = 0; i < difficulty; i++) {
         buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
