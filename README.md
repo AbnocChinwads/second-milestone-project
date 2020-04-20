@@ -31,7 +31,7 @@ Link to wireframes: (https://drive.google.com/file/d/1Xm1fj7bj0bNbwhSmmLjO9SjhNg
 
 * Disabling of the game buttons while they are flashing, so as to eliminate any cheating by following along with the flashes.
 
-* ~~Add a highest level localStorage variable.
+* ~~Add a highest level localStorage variable.~~
 
 ## Technologies Used
 
