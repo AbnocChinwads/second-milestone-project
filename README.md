@@ -9,7 +9,7 @@ The intended users of this website would be anyone who would want to improve the
     
     * As someone who works in a retail environment, I want something that is easily picked up and put down, so that I can relax when I am on a break.
     
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+Link to wireframes: (https://drive.google.com/file/d/1Xm1fj7bj0bNbwhSmmLjO9SjhNgh1ZPai/view?usp=sharing)
 
 ## Features
 
@@ -31,7 +31,7 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 * Disabling of the game buttons while they are flashing, so as to eliminate any cheating by following along with the flashes.
 
-* Add a highest level localStorage variable.
+* ~~Add a highest level localStorage variable.
 
 ## Technologies Used
 
