@@ -116,9 +116,6 @@ function chooseRandomButtons(buttons) {
     //length of array increases
     for (var i = 0; i < difficulty; i++) {
         buttonsToClick.push(buttons[randomIntFromInterval(0, maxRandomNumber)]);
-
-        /*(difficulty.length - 1 === i) ? $("button").prop("disabled", false)
-         : $("button").prop("disabled", true);*/
     }
 
     return buttonsToClick;
