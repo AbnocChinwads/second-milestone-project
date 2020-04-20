@@ -28,7 +28,7 @@ body {
 /*--------------------------------------------------------- Section*/
 
 .bigger-text {
-    font-size: 2rem; /*Increases size for score and level text*/
+    font-size: 1.5rem; /*Increases size for score and level text*/
 }
 
 /*--------------------------------------------------------- Buttons*/
