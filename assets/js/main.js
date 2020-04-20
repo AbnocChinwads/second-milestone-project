@@ -9,7 +9,7 @@ if(darkMode) {
     $("body").toggleClass("body-dark");
     $("label").text(function(i, text){
         return text === "Dark Mode" ? "Light Mode" : "Dark Mode";
-    })//causes text change on checkbox switch
+    }); //causes text change on checkbox switch
     $(".btn-black").toggleClass("btn-white");
     $("a").toggleClass("anchor-styling-dark");
 }
@@ -26,7 +26,7 @@ $("#darkModeSwitch").change(function() {
     $("body").toggleClass("body-dark", darkMode);
     $("label").text(function(i, text){
         return text === "Dark Mode" ? "Light Mode" : "Dark Mode";
-    })//changes text back on switch check
+    }); //changes text back on switch check
     $(".btn-black").toggleClass("btn-white", darkMode);
     $("a").toggleClass("anchor-styling-dark", darkMode);
 });

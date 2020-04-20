@@ -13,18 +13,22 @@ $("#best-level").html(`${levelBest}`); //Display best level on webpage
 
 //Game logic
 $("#btn-start").on("click", function() {
+    
     //Disables button to prevent multiple level starts
     $("#btn-start").prop("disabled", true);
     $("#btn-start").text("Disabled");
+    
     var buttons = document.getElementsByClassName("js-button");
     var buttonsToClick = chooseRandomButtons(buttons);
-    currentButtons = buttonsToClick;
+    var currentButtons = buttonsToClick;
     flashButtons(buttonsToClick, 0);
+    
     //Increment level count by 1 when the start button is pressed
     if (level == 0) {
         level += 1;
         $("#level").html(`${level}`);
     }
+    
     //Increase best level by 1 and save it to localStorage
     //if the level is greater than the best level
     if (level > levelBest) {
@@ -34,64 +38,69 @@ $("#btn-start").on("click", function() {
         $("#best-level").html(`${levelBest}`);
     }
 
-    var currentOrder = 0;
     $(".js-button").off("click").on("click", function() {
-    var selectedButton = $(this)[0];
-    var button = currentButtons[0];
-    //Check input matches array
-    if (selectedButton === button) {
-        currentButtons.splice(button,1);
-        //When a correct input is recorded, increment score by 1
-        score += 1;
-        //Increase high score by 1 and save it to localStorage
-        //if the score is greater than the high score
-        if (score > highScore) {
-            highScore += 1;
-            //Set persistent high score through page loads
-            localStorage.setItem("highScore", highScore);
-        }
-
-        $("#score").html(`${score}`);
-        $("#high-score").html(`${highScore}`);
-        $("#best-level").html(`${levelBest}`);
+        var selectedButton = $(this)[0];
+        var button = currentButtons[0];
         
-        //Display win message if you reach the end of the array
-        if (currentButtons.length === 0) {
+        //Check input matches array
+        if (selectedButton === button) {
+            currentButtons.splice(button,1);
+            //When a correct input is recorded, increment score by 1
+            score += 1;
+            
+            //Increase high score by 1 and save it to localStorage
+            //if the score is greater than the high score
+            if (score > highScore) {
+                highScore += 1;
+                //Set persistent high score through page loads
+                localStorage.setItem("highScore", highScore);
+            }
+
+            $("#score").html(`${score}`);
+            $("#high-score").html(`${highScore}`);
+            $("#best-level").html(`${levelBest}`);
+            
+            //Display win message if you reach the end of the array
+            if (currentButtons.length === 0) {
+                //Re-enables button on round win
+                $("#btn-start").prop("disabled", false);
+                $("#btn-start").text("Start");
+                alert("Well done! You won the level! Click 'Start' to begin the next");
+                //Increase level count at the end of every level
+                level += 1;
+                
+                if (level > levelBest) {
+                    levelBest += 1;
+                    localStorage.setItem("levelBest", levelBest);
+                }
+                
+                $("#level").html(`${level}`);
+                $("#best-level").html(`${levelBest}`);
+                }
+        
+        //Display restart message if input does not match array
+        } else {
+            currentButtons = buttonsToClick;
             //Re-enables button on round win
             $("#btn-start").prop("disabled", false);
             $("#btn-start").text("Start");
-            alert("Well done! You won the level! Click 'Start' to begin the next");
-            //Increase level count at the end of every level
-            level += 1;
+            alert("Sorry, that was wrong. Click 'Start' to try again");
             
-            if (level > levelBest) {
-                levelBest += 1;
-                localStorage.setItem("levelBest", levelBest);
-            }
+            //Reset score and level count to 0 on a failed match
+            //Reset difficulty variable to 4
+            score = 0;
+            level = 0;
+            difficulty = 4;
             
+            $("#score").html(`${score}`);
             $("#level").html(`${level}`);
-            $("#best-level").html(`${levelBest}`);
-            }
-    //Display restart message if input does not match array
-    } else {
-        currentButtons = buttonsToClick;
-        //Re-enables button on round win
-        $("#btn-start").prop("disabled", false);
-        $("#btn-start").text("Start");
-        alert("Sorry, that was wrong. Click 'Start' to try again");
-        //Reset score and level count to 0 on a failed match
-        //Reset difficulty variable to 4
-        score = 0;
-        level = 0;
-        difficulty = 4;
-        $("#score").html(`${score}`);
-        $("#level").html(`${level}`);
-    }
-  });
-})
+        }
+    });
+});
 
 //Random array functions
 function chooseRandomButtons(buttons) {
+    
     var buttonsToClick = [];
     var maxRandomNumber = buttons.length - 1;
     //Increase difficulty when a certain level is reached
@@ -102,6 +111,7 @@ function chooseRandomButtons(buttons) {
     else if (level % 2 == 1 && level > 16) {
         difficulty += 1;
     }
+    
     //When difficulty variable increases
     //length of array increases
     for (var i = 0; i < difficulty; i++) {
