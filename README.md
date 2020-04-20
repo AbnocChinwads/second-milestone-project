@@ -33,6 +33,8 @@ Link to wireframes: (https://drive.google.com/file/d/1Xm1fj7bj0bNbwhSmmLjO9SjhNg
 
 * ~~Add a highest level localStorage variable.~~
 
+* Add a contact link in a footer.
+
 ## Technologies Used
 
 * HTML 5 (https://www.w3schools.com/html/html5_intro.asp)
