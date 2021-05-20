@@ -2,136 +2,141 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
-	<title>Second Milestone Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Second Milestone Project</title>
 </head>
 
-<body>
-<!--Header-->
-	<header>
-		<div class="container-fluid row no-gutters">
-			<div class="col">
-            <!--Social media links-->
-				<a class="anchor-styling" href="https://www.facebook.com/" target="_blank">
-					<i class="fab fa-facebook-square" aria-hidden="true"></i></a>
-				<a class="anchor-styling" href="https://www.twitter.com/" target="_blank">
-					<i class="fab fa-twitter-square" aria-hidden="true"></i></a>
-				<a class="anchor-styling" href="https://www.instagram.com/" target="_blank">
-					<i class="fab fa-instagram" aria-hidden="true"></i></a>
-            <!--/Social media links-->
-            <!--Dark mode switch-->
-                <div class="custom-control custom-switch float-right">
-                <!--Uses bootstrap classes to create a custom checkbox-->
-                    <input type="checkbox" class="custom-control-input" id="darkModeSwitch">
-                    <label class="custom-control-label" for="darkModeSwitch">Dark Mode</label>
+<body class="d-flex flex-column h-100">
+    <!--Header-->
+    <header>
+        <div class="container-fluid row g-0">
+            <div class="col">
+                <!--Dark mode switch-->
+                <div class="form-check form-switch float-end me-2">
+                    <!--Uses bootstrap classes to create a custom checkbox-->
+                    <input type="checkbox" class="form-check-input" id="darkModeSwitch">
+                    <label class="form-check-label" for="darkModeSwitch">Dark Mode</label>
                 </div>
-            <!--/Dark mode switch-->
-			</div>
-		</div>
+                <!--/Dark mode switch-->
+            </div>
+        </div>
         <!--Game title-->
-		<div class="row no-gutters">
-			<div class="col-md heading-centre heading-style-uppercase">
-				<h1 class="h1-text">Interactive Memory Game</h1>
-				<h3 class="h3-text">follow the colours to glory, and high scores!</h3>
-			</div>
-		</div>
+        <div class="row g-0">
+            <div class="col-md heading-centre heading-style-uppercase">
+                <h1>Interactive Memory Game</h1>
+                <h3>follow the colours to glory, and high scores!</h3>
+            </div>
+        </div>
         <!--/Game title-->
-	</header>
-<!--/Header-->
-<!--How to play-->
-	<section>
+    </header>
+    <!--/Header-->
+    <main class="flex-shrink-0">
+        <!--How to play-->
+
         <div class="container-fluid">
-            <div class="row no-gutters">
+            <div class="row g-0">
                 <div class="col">
-                    <h4 class="h4-text heading-centre heading-style-uppercase">How to play</h4>
+                    <h4 class="heading-centre heading-style-uppercase">How to play</h4>
                     <p class="text-center">
-                        The aim of the game is to press the corresponding button in 
-                        the randomly generated run of colours.<br> The runs will start 
-                        off nice and simple (only four colours), but will get progressively 
+                        The aim of the game is to press the corresponding button in
+                        the randomly generated run of colours.<br> The runs will start
+                        off nice and simple (only four colours), but will get progressively
                         harder.<br> You have two rounds of each length, and at level 15 the colours
                         will flash twice as fast.
-                        <br> Enjoy! And don't forget to share your high scores!
+                        <br> Enjoy! <hidden>And don't forget to share your high scores!</hidden>
                     </p>
                 </div>
             </div>
         </div>
-	</section>
-<!--/How to play-->
-<!--Game buttons-->
-    <section>
+
+        <!--/How to play-->
+        <!--Game buttons-->
+
         <div class="container-fluid">
-            <div class="row no-gutters btn-centre">
+            <div class="row g-0 btn-centre">
                 <div class="col">
-                    <button id="btn-red" class="btn btn-danger js-button" aria-label="red">
+                    <button id="btn-red" class="btn btn-danger rounded-circle btn-lg js-button" aria-label="red">
                     </button>
-                    <button id="btn-blue" class="btn btn-primary js-button" aria-label="blue">
+                    <button id="btn-blue" class="btn btn-primary rounded-circle btn-lg js-button" aria-label="blue">
                     </button>
-                    <button id="btn-green" class="btn btn-success js-button" aria-label="green">
+                    <button id="btn-green" class="btn btn-success rounded-circle btn-lg js-button" aria-label="green">
                     </button>
                 </div>
             </div>
-            <div class="row no-gutters btn-centre">
+            <div class="row g-0 btn-centre">
                 <div class="col">
-                    <button id="btn-yellow" class="btn btn-warning js-button" aria-label="yellow">
+                    <button id="btn-yellow" class="btn btn-warning rounded-circle btn-lg js-button" aria-label="yellow">
                     </button>
-                    <button id="btn-mono" class="btn btn-black js-button" aria-label="black">
+                    <button id="btn-mono" class="btn btn-black rounded-circle btn-lg js-button" aria-label="black">
                     </button>
                 </div>
             </div>
-            <div class="row no-gutters btn-centre">
+            <div class="row g-0 btn-centre">
                 <div class="col">
-                    <button id="btn-start" class="btn btn-initial" aria-labelledby="btn-start">
-                    Start</button>
+                    <button id="btn-start" class="btn btn-initial rounded-circle btn-lg" aria-labelledby="btn-start">
+                        Start</button>
                 </div>
             </div>
-        </div>    
-    </section>
-<!--/Game buttons-->
-<!--Score & level-->
-    <section>
+        </div>
+
+        <!--/Game buttons-->
+        <!--Score & level-->
+
         <div class="container-fluid">
-            <div class="row no-gutters">
+            <div class="row g-0">
                 <div class="col">
-                    <p class="text-center bigger-text">
+                    <p class="text-center">
                         Score: <span id="score"></span> &nbsp;
 
                         Level: <span id="level"></span>
                     </p>
-                    <p class="text-center float-md-left bigger-text">
+                    <p class="text-center float-md-start">
                         High Score: <span id="high-score"></span>
                     </p>
-                    <p class="text-center float-md-right bigger-text">
+                    <p class="text-center float-md-end">
                         Best Level: <span id="best-level"></span>
                     </p>
                 </div>
-            </div>    
+            </div>
         </div>
-    </section>
-<!--/Score & level-->
-    <footer hidden>
+
+        <!--/Score & level-->
+    </main>
+    <footer class="footer mt-auto py-3">
         <div class="container-fluid">
-            <div class="row no-gutters">
+            <div class="row g-0 py-3">
+                <div class="col-4 float-start">
+                    <!--Social media links-->
+                    <a class="anchor-styling" href="https://www.facebook.com/" target="_blank">
+                        <i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                    <a class="anchor-styling" href="https://www.twitter.com/" target="_blank">
+                        <i class="fab fa-twitter-square" aria-hidden="true"></i></a>
+                    <a class="anchor-styling" href="https://www.instagram.com/" target="_blank">
+                        <i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <!--/Social media links-->
+                </div>
                 <div class="col">
-                    Found a bug? Got a suggestion? 
-                    <a class="anchor-styling" href="#" target="_blank">
-                        Contact us!
+                    <s>Found a bug? Got a suggestion?
+                        <a class="anchor-styling" href="#" target="_blank">
+                            Contact us!</s>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
     </script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js">
-	</script>
-	<script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/game.js"></script>
 </body>
 

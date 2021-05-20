@@ -1,12 +1,10 @@
 /*--------------------------------------------------------- Body*/
 
 body {
-    position: relative;
-    min-height: 100vh;
     background-color: #fff;
     font-family: Helvetica, sans-serif;
     color: #000;
-    padding-bottom: 1rem;
+    
 }
 
 /*--------------------------------------------------------- Header*/
@@ -25,6 +23,10 @@ body {
     text-transform: uppercase;
 }
 
+.form-switch .form-check-input::after {
+    border-right: 25em;
+}
+
 /*--------------------------------------------------------- Section*/
 
 .bigger-text {
@@ -32,6 +34,10 @@ body {
 }
 
 /*--------------------------------------------------------- Buttons*/
+
+.btn {
+    padding: 2rem;
+}
 
 .btn-centre {
     text-align: center;
@@ -48,27 +54,10 @@ body {
 
 #btn-start {
     margin: 3rem;
-    padding: 1.3rem 0.6rem;
-    border-radius: 50%; /*Rounds button edges to force a circle*/
-}
-
-#btn-red,
-#btn-blue,
-#btn-green,
-#btn-yellow,
-#btn-mono {
-    margin: 3rem;
-    padding: 2rem 1.6rem;
-    border-radius: 50%; /*Rounds button edges to force a circle*/
+    padding: 1rem 0.6rem;
 }
 
 /*--------------------------------------------------------- Footer*/
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
 
 a:link {
     text-decoration: none;
