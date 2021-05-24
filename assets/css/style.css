@@ -1,6 +1,8 @@
 /*--------------------------------------------------------- Body*/
 
 body {
+    min-height: 100vh;
+    padding-bottom: 1rem;
     background-color: #fff;
     font-family: Helvetica, sans-serif;
     color: #000;
@@ -58,6 +60,12 @@ body {
 }
 
 /*--------------------------------------------------------- Footer*/
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
 
 a:link {
     text-decoration: none;

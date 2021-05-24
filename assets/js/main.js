@@ -8,9 +8,10 @@ if(darkMode) {
     $('#darkModeSwitch').prop("checked", true);
     $("body").toggleClass("body-dark");
     $("label").text(function(i, text){
-        return text === "Dark Mode" ? "Light Mode" : "Dark Mode";
+        return text === "dark" ? "light" : "dark";
     }); //causes text change on checkbox switch
     $(".btn-black").toggleClass("btn-white");
+    $("#closeBtn").toggleClass("btn-close-white");
     $("a").toggleClass("anchor-styling-dark");
 }
 
@@ -25,8 +26,9 @@ $("#darkModeSwitch").change(function() {
     //removes the classes when the switch is rechecked
     $("body").toggleClass("body-dark", darkMode);
     $("label").text(function(i, text){
-        return text === "Dark Mode" ? "Light Mode" : "Dark Mode";
+        return text === "dark" ? "light" : "dark";
     }); //changes text back on switch check
     $(".btn-black").toggleClass("btn-white", darkMode);
+    $("#closeBtn").toggleClass("btn-close-white", darkMode);
     $("a").toggleClass("anchor-styling-dark", darkMode);
 });
