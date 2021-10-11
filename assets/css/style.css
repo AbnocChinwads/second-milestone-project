@@ -59,6 +59,14 @@ body {
     padding: 1rem 0.6rem;
 }
 
+.score-container {
+    height: 100%;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.75); 
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+}
+
 /*--------------------------------------------------------- Footer*/
 
 footer {
@@ -91,6 +99,10 @@ a:link {
 .btn-white {
     background-color: #fff;
 } /*Changes colour of 5th button from black to white in dark mode*/
+
+.score-container-dark {
+    box-shadow: 0 0 1rem 0 rgba(255, 255, 255, 1);
+}
 
 /*--------------------------------------------------------- Media Queries*/
 

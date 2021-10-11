@@ -11,7 +11,8 @@ if(darkMode) {
         return text === "dark" ? "light" : "dark";
     }); //causes text change on checkbox switch
     $(".btn-black").toggleClass("btn-white");
-    $("#closeBtn").toggleClass("btn-close-white");
+    $(".score-container").toggleClass("score-container-dark");
+    $("#btn-close").toggleClass("btn-close-white");
     $("a").toggleClass("anchor-styling-dark");
 }
 
@@ -29,6 +30,7 @@ $("#darkModeSwitch").change(function() {
         return text === "dark" ? "light" : "dark";
     }); //changes text back on switch check
     $(".btn-black").toggleClass("btn-white", darkMode);
-    $("#closeBtn").toggleClass("btn-close-white", darkMode);
+    $(".score-container").toggleClass("score-container-dark", darkMode);
+    $("#btn-close").toggleClass("btn-close-white", darkMode);
     $("a").toggleClass("anchor-styling-dark", darkMode);
 });
